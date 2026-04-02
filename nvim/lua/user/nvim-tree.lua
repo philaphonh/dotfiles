@@ -1,4 +1,4 @@
-local map_opts = require('user.settings.mapping')
+local map_opts = require('user.settings.mapping_options')
 
 require('nvim-tree').setup {
   view = {

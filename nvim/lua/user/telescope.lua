@@ -1,4 +1,4 @@
-local map_opts = require('user.settings.mapping')
+local map_opts = require('user.settings.mapping_options')
 
 local telescope = require('telescope')
 local actions = require('telescope.actions')
@@ -26,6 +26,7 @@ end
 
 telescope.setup {
   defaults = {
+    hidden = true,
     file_ignore_patterns = { "node_modules", ".git" },
     buffer_previewer_maker = new_maker,
     mappings = {
@@ -38,13 +39,27 @@ telescope.setup {
         ["<M-p>"] = actions_layout.toggle_preview
       }
     }
+  },
+  pickers = {
+    find_files = {
+      find_command = { "fd", "--type", "f", "--hidden", "--no-ignore" }
+    },
+  },
+  extensions = {
+    file_browser = {
+      hidden = {
+        file_browser = true,
+        folder_browser = true,
+      },
+      respect_gitignore = false,
+    }
   }
 }
 
-telescope.load_extension("flutter")
-telescope.load_extension("file_browser")
-telescope.load_extension("media_files")
-telescope.load_extension("dap")
+pcall(telescope.load_extension, "flutter")
+pcall(telescope.load_extension, "file_browser")
+pcall(telescope.load_extension, "media_files")
+pcall(telescope.load_extension, "dap")
 
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files <CR>', map_opts)
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep <CR>', map_opts)

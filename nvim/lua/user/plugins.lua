@@ -3,7 +3,8 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Theme
-  use 'RRethy/nvim-base16'
+  use 'rebelot/kanagawa.nvim'
+  use 'f-person/auto-dark-mode.nvim'
 
   -- Language server
   use 'neovim/nvim-lspconfig'
@@ -14,24 +15,22 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'tami5/lspsaga.nvim'
+  -- use 'nvimdev/lspsaga.nvim'
 
   -- Auto pairing
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
-  use 'p00f/nvim-ts-rainbow'
 
   -- Syntax highlighting
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/nvim-treesitter', branch = 'master', run = ':TSUpdate' }
 
   -- Language support tools
   use 'akinsho/flutter-tools.nvim'
 
-  -- Debugger
+  -- Debugging support
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
+  use 'nvim-neotest/nvim-nio'
   use 'theHamsta/nvim-dap-virtual-text'
 
   -- File explorer & fuzzy finder
@@ -51,11 +50,12 @@ require('packer').startup(function()
   -- Git
   use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
+  use 'kdheepak/lazygit.nvim'
 
   -- nvim tmux navigator
   use 'alexghergh/nvim-tmux-navigation'
 
   -- Support other plugins
   use 'nvim-lua/plenary.nvim'
-  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-tree/nvim-web-devicons'
 end)

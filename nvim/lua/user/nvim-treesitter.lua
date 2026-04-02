@@ -2,29 +2,25 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = {
     'javascript',
     'typescript',
-    'tsx',
     'html',
     'css',
     'vue',
     'svelte',
     'astro',
+    'tsx',
     'go',
-    'c',
-    'cpp',
     'rust',
     'dart',
     'lua',
-    'json',
     'yaml',
     'toml',
-    'markdown'
+    'markdown',
+    'json',
   },
-  sync_install = true,
+  sync_install = false,
+  auto_install = false,
   highlight = {
-    enable = true
-  },
-  autotag = {
-    enable = true
+    enable = true,
   },
   rainbow = {
     enable = true,

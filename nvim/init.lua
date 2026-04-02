@@ -2,14 +2,12 @@
 require('user.plugins')
 -- Load general settings
 require('user.general')
--- Load language server config
+-- Load LSP config
 require('user.nvim-lspconfig')
--- Load debugger config
-require('user.nvim-dap')
 -- Load auto completion config
 require('user.nvim-cmp')
--- Load autopairs config
-require('user.nvim-autopairs')
+-- Load autopairing / auto tag closing config
+require('user.auto-pairings')
 -- Load treesitter config
 require('user.nvim-treesitter')
 -- Load telescope config
@@ -26,3 +24,5 @@ require('user.gitsigns')
 require('user.tmux-nvim')
 -- Load Comment.nvim config
 require('user.nvim-comment')
+-- Load debugger config
+require('user.nvim-dap')
